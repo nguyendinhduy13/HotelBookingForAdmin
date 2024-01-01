@@ -16,7 +16,10 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 
 import Radio from "@mui/material/Radio";
 
-import { GetOrderHotelByDate, GetOrderHotelByQuarter } from "../../../middlewares/order";
+import {
+  GetOrderHotelByDate,
+  GetOrderHotelByQuarter,
+} from "../../../middlewares/order";
 
 import {
   BarChart,
@@ -112,7 +115,7 @@ function Custom(props) {
 const options = ["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"];
 
 function RevenueHotel() {
-  const {userInfo}=useSelector(state=>state.global)
+  const { userInfo } = useSelector((state) => state.global);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -133,11 +136,11 @@ function RevenueHotel() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [valueQuarter, setValueQuarter] = React.useState(options[1]);
 
-  const { typeMoney} = useSelector((state) => state.global);
+  const { typeMoney } = useSelector((state) => state.global);
   const { totalOrder } = useSelector((state) => state.order);
   var dataByYear = [];
   var startYear = 2021;
-  var endYear = 2023;
+  var endYear = 2024;
 
   for (var year = startYear; year <= endYear; year++) {
     var dataMonths = [];
@@ -292,7 +295,7 @@ function RevenueHotel() {
     const start = formatD(startDate);
     const end = formatD(endDate);
     const data = {
-      id_hotel:userInfo.idHotel,
+      id_hotel: userInfo.idHotel,
       start: start,
       end: end,
     };
@@ -416,7 +419,7 @@ function RevenueHotel() {
   };
 
   const [selectedValue, setSelectedValue] = useState({
-    first: "2023",
+    first: "2024",
     second: "",
   });
   const handleChange = (event) => {
@@ -455,7 +458,7 @@ function RevenueHotel() {
 
   const handleGetDataQuarter = useCallback(async (value) => {
     const data = {
-      id_hotel:userInfo.idHotel,
+      id_hotel: userInfo.idHotel,
       quarter: Number(value.split(" ")[1]),
     };
     await GetOrderHotelByQuarter(data).then((res) => {

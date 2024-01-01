@@ -19,7 +19,7 @@ const Chart = ({ dataChart, height, title }) => {
   var currentYear = new Date().getFullYear();
   const currentMonth = new Date().getMonth();
   var startYear = 2021;
-  var endYear = 2023;
+  var endYear = 2024;
 
   for (var year = startYear; year <= endYear; year++) {
     var dataMonths = [];

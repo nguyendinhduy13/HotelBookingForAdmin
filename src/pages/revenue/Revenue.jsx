@@ -136,7 +136,7 @@ function Revenue() {
 
   var dataByYear = [];
   var startYear = 2021;
-  var endYear = 2023;
+  var endYear = 2024;
 
   for (var year = startYear; year <= endYear; year++) {
     var dataMonths = [];
