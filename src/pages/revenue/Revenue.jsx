@@ -296,6 +296,7 @@ function Revenue() {
     };
     GetOrderByDate(data).then(async (res) => {
       if (res.status === 200) {
+        console.log(res.data.data);
         const dataByDate = await handleFormatDate(
           res.data.data,
           startDate,
@@ -414,7 +415,7 @@ function Revenue() {
   };
 
   const [selectedValue, setSelectedValue] = useState({
-    first: "2023",
+    first: "2024",
     second: "",
   });
   const handleChange = (event) => {
